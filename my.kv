@@ -1,0 +1,92 @@
+#:kivy 1.11.1
+
+<MyWidget>:
+    FloatLayout:
+        orientation: "vertical"
+        size_hint: 1, 1
+        size: (580, 960)
+
+        MapView:
+            id: map_view
+            zoom: 10
+            lat: 13.0827
+            lon: 80.2707
+            size_hint: (1, 1)
+#            size: 800, 600
+
+            # Add a MapMarker widget to the map
+            MapMarker:
+                lat: 13.0827
+                lon: 80.2707
+                popup_text: "Navigate to Chennai"
+                source: "marker50.png"
+            MapMarker:
+                lat: 13.0368
+                lon: 80.2676
+                popup_text: "Navigate to Mylapore"
+                source: "marker50.png"
+            MapMarker:
+                lat: 13.1067
+                lon: 80.0970
+                popup_text: "Navigate to Avadi"
+                source: "marker50.png"
+            MapMarker:
+                lat: 12.9249
+                lon: 80.1000
+                popup_text: "Navigate to tambaram"
+                source: "marker50.png"
+            MapMarker:
+                lat: 13.0067
+                lon: 80.2206
+                popup_text: "Navigate to guindy"
+                source: "marker50.png"
+
+        # Create a TextInput widget for the search bar
+#        FloatLayout:
+#            size_hint: 1, 0.1
+#            size: (580, 96)
+#            TextInput:
+#                id: search_bar
+#                size_hint: 0.8, 1
+#                size: (464, 96)
+#                pos_hint: {"x": 0.1, "y": 0}
+#                multiline: False
+#                font_size: 48
+#                text: "Search"
+#                on_text: root.search(self.text)
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(10)
+            padding: dp(20)
+            size_hint_y: None
+            height: "80dp"
+            BoxLayout:
+                size_hint_y: None
+                height: self.minimum_height
+                MDIconButton:
+                    icon: 'magnify'
+                MDTextField:
+#                    color_mode: "custom"
+#                    line_color_focus: (0, 0, 1, 1)
+                    line_color_normal: (0.02, 0.05, 0.16, 1)
+                    id: search_field
+                    hint_text: 'Search icon'
+                    hint_text_color: [0.02, 0.05, 0.16, 1]
+                    on_text: root.set_list_md_icons(self.text, True)
+
+#            size_hint_y: None
+#            height: "50dp"
+#            TextInput:
+#                id: search_input
+#                hint_text: "Enter a location to search"
+#                size_hint_y: None
+#                size_hint_x: 0.8
+#    #            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+#                height: "40dp"
+#            Button:
+#                text: "Search"
+#                size_hint_y: None
+#                size_hint_x: 0.15
+#                height: "40dp"
+#                on_press: root.search(search_input.text)
+
