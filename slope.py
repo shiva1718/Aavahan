@@ -4,6 +4,7 @@ from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 from kivymd.app import MDApp
+from android.permissions import request_permissions, Permission
 
 Window.size = (310, 580)
 
